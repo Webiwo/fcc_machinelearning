@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>linear_regression.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080;}
+.s1 { color: #262626;}
+.s2 { color: #00733b;}
+.s3 { color: #808080;}
+.s4 { color: #0073e6;}
+</style>
+</head>
+<body bgcolor="#f2f3f7">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+linear_regression.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">urllib.request </span><span class="s0">import </span><span class="s1">urlretrieve</span>
+
+<span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+<span class="s0">import </span><span class="s1">plotly.express </span><span class="s0">as </span><span class="s1">px</span>
+<span class="s0">import </span><span class="s1">matplotlib</span>
+<span class="s0">import </span><span class="s1">matplotlib.pyplot </span><span class="s0">as </span><span class="s1">plt</span>
+<span class="s0">import </span><span class="s1">seaborn </span><span class="s0">as </span><span class="s1">sns</span>
+
+<span class="s1">medical_charges_url = </span><span class="s2">&quot;https://raw.githubusercontent.com/JovianML/opendatasets/master/data/medical-charges.csv&quot;</span>
+<span class="s3">#urlretrieve(medical_charges_url, &quot;medical.csv&quot;)</span>
+
+<span class="s1">medical_df = pd.read_csv(</span><span class="s2">&quot;medical.csv&quot;</span><span class="s1">)</span>
+<span class="s1">print(medical_df)</span>
+
+<span class="s1">medical_df.info()</span>
+<span class="s1">medical_df_desc = medical_df.describe()</span>
+<span class="s1">print(medical_df_desc)</span>
+
+<span class="s3"># the following settings will improve the default style and font sizes for our charts</span>
+<span class="s1">sns.set_style(</span><span class="s2">&quot;darkgrid&quot;</span><span class="s1">)</span>
+<span class="s1">matplotlib.rcParams[</span><span class="s2">&quot;font.size&quot;</span><span class="s1">] = </span><span class="s4">11</span>
+<span class="s1">matplotlib.rcParams[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="s1">] = (</span><span class="s4">10</span><span class="s1">, </span><span class="s4">6</span><span class="s1">)</span>
+
+<span class="s3"># ------------------------------------------------------------------------------------------------------------</span>
+<span class="s3"># EXPLORATORY ANALYSIS AND VISUALIZATION</span>
+<span class="s3"># ------------------------------------------------------------------------------------------------------------</span>
+<span class="s3"># Let's explore the data by visualizing the distribution of values in some columns of the dataset,</span>
+<span class="s3"># and the relationships between &quot;charges&quot; and other columns.</span>
+
+<span class="s3">#### Age</span>
+<span class="s1">fig = px.histogram(medical_df,</span>
+                   <span class="s1">x=</span><span class="s2">&quot;age&quot;</span><span class="s1">,</span>
+                   <span class="s1">marginal=</span><span class="s2">&quot;box&quot;</span><span class="s1">,</span>
+                   <span class="s1">nbins=</span><span class="s4">47</span><span class="s1">, </span><span class="s3"># 64-18</span>
+                   <span class="s1">title=</span><span class="s2">&quot;Distribution of Age&quot;</span><span class="s1">)</span>
+<span class="s1">fig.update_layout(bargap=</span><span class="s4">0.1</span><span class="s1">)</span>
+<span class="s3">#fig.show()</span>
+
+<span class="s3">#### Body Mass Index</span>
+<span class="s1">fig = px.histogram(medical_df,</span>
+                   <span class="s1">x=</span><span class="s2">&quot;bmi&quot;</span><span class="s1">,</span>
+                   <span class="s1">marginal=</span><span class="s2">&quot;box&quot;</span><span class="s1">,</span>
+                   <span class="s1">color_discrete_sequence=[</span><span class="s2">&quot;#FF0000&quot;</span><span class="s1">],</span>
+                   <span class="s1">title=</span><span class="s2">'Distribution of BMI (Body Mass Index)'</span><span class="s1">)</span>
+<span class="s1">fig.update_layout(bargap=</span><span class="s4">0.1</span><span class="s1">)</span>
+<span class="s1">fig.show()</span></pre>
+</body>
+</html>
