@@ -5,7 +5,7 @@ from sklearn.linear_model import SGDRegressor
 
 import utils
 
-file_name = "charges.csv"
+file_name = "./data/charges.csv"
 medical_df = utils.prepare_dataframe(file_name)
 
 # -----------------------------------------------------------------------------------------------------------

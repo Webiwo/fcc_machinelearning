@@ -104,8 +104,8 @@ def show_heatmap(df):
 
 # ------------------------------------------------------------------------------------------------------------
 medical_charges_url = "https://raw.githubusercontent.com/JovianML/opendatasets/master/data/medical-charges.csv"
-file_name = "charges.csv"
-# import_data(medical_charges_url, file_name)
+file_name = "./data/charges.csv"
+# utils.import_data(medical_charges_url, file_name)
 medical_df = utils.prepare_dataframe(file_name)
 utils.set_plot_style()
 graphs = [

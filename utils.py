@@ -15,8 +15,9 @@ def prepare_dataframe(file_name):
     df = pd.read_csv(file_name)
     print(df)
     df.info()
-    medical_df_desc = df.describe()
-    print(medical_df_desc)
+    df_desc = df.describe()
+    print(df_desc)
+    print(f"isna().sum(): \n{df.isna().sum()}")
     return df
 
 
