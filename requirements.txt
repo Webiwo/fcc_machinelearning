@@ -1,0 +1,13 @@
+numpy
+pandas 
+notebook
+matplotlib
+seaborn
+plotly
+scipy
+gdown
+Flask
+Flask-Cors
+scikit-learn
+xgboost
+-e .
