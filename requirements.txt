@@ -10,4 +10,5 @@ Flask
 Flask-Cors
 scikit-learn
 xgboost
--e .
+fairlearn
+statsmodels
