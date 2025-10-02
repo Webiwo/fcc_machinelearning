@@ -15,3 +15,7 @@ statsmodels
 tensorflow
 torch
 torchvision
+nltk
+gensim
+wordcloud
+Pillow

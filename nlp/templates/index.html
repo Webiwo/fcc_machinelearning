@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Spam Classifier</title>
+    <style>
+      h1 {
+        color: #01759c;
+      }
+      html {
+        height: 100vh;
+        background-image: linear-gradient(to bottom, #ffffff, #c0eefd);
+        font-family: Verdana;
+      }
+      body {
+        text-align: center;
+      }
+      textarea {
+        border: 2px solid #01759c;
+        font-size: 16px;
+        padding: 16px;
+        margin-top: 32px;
+      }
+      button {
+        background-color: #008CBA;
+        border: None;
+        color: #fff;
+        padding: 10px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }    
+      button:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+        color: #fff;
+      }
+      p {
+        margin: 50px auto;
+        color: #01759c;
+        width: 500px;
+      }
+    </style>
+</head>
+<body>
+    <h1>SMS Spam Classifier</h1>
+    <form method="POST" action="/predict">
+      <textarea name="sms-content" placeholder="Enter your SMS content" rows="15" cols="35"></textarea>
+      <div>
+        <button>Check Spam</button>
+      </div>
+    </form>
+    <p>{{ text }}</p>
+    <p>{{ prediction }}</p>
+</body>
+</html>
