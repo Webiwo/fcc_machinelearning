@@ -20,3 +20,11 @@ gensim
 wordcloud
 Pillow
 flasgger
+dotenv
+openai
+tiktoken
+ollama
+requests
+beautifulsoup4
+google-generativeai
+gradio
